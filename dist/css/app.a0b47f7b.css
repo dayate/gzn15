@@ -3854,10 +3854,10 @@ a.tag:hover {
 .input,
 .select select,
 .textarea {
-  background-color: #fff;
+  background-color: #3d4149;
   border-color: #dbdbdb;
   border-radius: 4px;
-  color: #363636;
+  color: #fff;
 }
 .input::-moz-placeholder,
 .select select::-moz-placeholder,
@@ -5150,7 +5150,7 @@ fieldset[disabled] .select select:hover {
   background-color: #585b62;
   box-shadow: 0 0.3em 0.3em -0.125em rgba(10, 10, 10, 0.1),
     0 0 0 1px rgba(10, 10, 10, 0.02);
-  color: #ffffff;
+  color: #111;
   max-width: 100%;
   position: relative;
 }
@@ -5187,7 +5187,7 @@ fieldset[disabled] .select select:hover {
 }
 .card-content,
 .card-footer {
-  background-color: transparent;
+  background-color: #fff;
 }
 .card-footer {
   border-top: 1px solid #ededed;
@@ -10280,7 +10280,7 @@ body {
 }
 .is-divider-vertical[data-content]:after,
 .is-divider[data-content]:after {
-  color: #919191;
+  color: #111;
 }
 .index-button-copy {
   background: 0 0;
