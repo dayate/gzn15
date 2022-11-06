@@ -1,6 +1,6 @@
 // =======Options START=======
 var authConfig = {
-  siteName: "goindex", // 网站名称
+  siteName: "Private Drive", // 网站名称
   version: "1.1.2", // 程序版本
   theme: "acrou",
   // 强烈推荐使用自己的 client_id 和 client_secret
@@ -46,14 +46,14 @@ var authConfig = {
    * 如果设置的值过小，会导致文件列表页面滚动条增量加载（分页加载）失效；
    * 此值的另一个作用是，如果目录内文件数大于此设置值（即需要多页展示的），将会对首次列目录结果进行缓存。
    */
-  files_list_page_size: 50,
+  files_list_page_size: 25,
   /**
    * 搜索结果页面每页显示的数量。【推荐设置值为 50 到 1000 之间】；
    * 如果设置大于1000，会导致请求 drive api 时出错；
    * 如果设置的值过小，会导致搜索结果页面滚动条增量加载（分页加载）失效；
    * 此值的大小影响搜索操作的响应速度。
    */
-  search_result_list_page_size: 50,
+  search_result_list_page_size: 25,
   // 确认有 cors 用途的可以开启
   enable_cors_file_down: false,
   /**
@@ -65,7 +65,7 @@ var authConfig = {
 };
 
 var themeOptions = {
-  cdn: "https://cdn.jsdelivr.net/gh/alx-xlx/goindex",
+  cdn: "https://cdn.jsdelivr.net/gh/dayate/gzn15",
   // 主题版本号
   version: "2.0.8-darkmode-0.1",
   //可选默认系统语言:en/zh-chs/zh-cht
@@ -75,12 +75,12 @@ var themeOptions = {
      * 是否渲染HEAD.md文件
      * Render HEAD.md file
      */
-    head_md: false,
+    head_md: true,
     /**
      * 是否渲染README.md文件
      * Render README.md file
      */
-    readme_md: false,
+    readme_md: true,
     /**
      * 是否渲染文件/文件夹描述
      * Render file/folder description or not
@@ -97,7 +97,7 @@ var themeOptions = {
      * Player api(Use default player if not specified)
      */
     api: "",
-    autoplay: true,
+    autoplay: false,
   },
   /**
    * 音频播放器选项
@@ -114,7 +114,7 @@ const FUNCS = {
   /**
    * 转换成针对谷歌搜索词法相对安全的搜索关键词
    */
-  formatSearchKeyword: function(keyword) {
+  formatSearchKeyword: function (keyword) {
     let nothing = "";
     let space = " ";
     if (!keyword) return nothing;
@@ -148,14 +148,24 @@ function html(current_drive_order = 0, model = {}) {
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/> <title>${authConfig.siteName}</title> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1"><meta name="description" content="Combining the power of Cloudflare Workers and Google Drive will allow you to index your files on the browser on Cloudflare Workers."><meta name="theme-color" content="#FF3300"><meta name="application-name" content="goindex"><meta name="robots" content="index, follow"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://i.imgur.com/rOyuGjA.gif"><meta name="twitter:description" content="Combining the power of Cloudflare Workers and Google Drive will allow you to index your files on the browser on Cloudflare Workers."><meta name="keywords" content="goindex, google, drive, goindex, gdindex, classic, material, workers-script, oauth-consent-screen, google-drive, cloudflare-workers, themes"><meta name="twitter:title" content="Goindex"><meta name="twitter:url" content="https://github.com/alx-xlx/goindex"><link rel="shortcut icon" href="https://i.imgur.com/rOyuGjA.gif"><meta property="og:site_name" content="Goindex"><meta property="og:type" content="website"><meta property="og:image" content="https://i.imgur.com/rOyuGjA.gif"><meta property="og:description" content="Combining the power of Cloudflare Workers and Google Drive will allow you to index your files on the browser on Cloudflare Workers."><meta property="og:title" content="Goindex"><meta property="og:url" content="https://github.com/alx-xlx/goindex"><link rel="apple-touch-icon" href="https://i.imgur.com/rOyuGjA.gif"><link rel="icon" type="image/png" sizes="32x32" href="https://i.imgur.com/rOyuGjA.gif"><meta name="google-site-verification" content="OD_AXMYw-V6ID9xQUb2Wien9Yy8IJSyfBUyejYNB3CU"/><script async src="https://www.googletagmanager.com/gtag/js?id=UA-86099016-6"></script><script>window.dataLayer=window.dataLayer || []; function gtag(){dataLayer.push(arguments);}gtag('js', new Date()); gtag('config', 'UA-86099016-6');</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MR47R4M');</script> <style>@import url(${themeOptions.cdn}@${themeOptions.version}/goindex-acrou/dist/style.min.css); </style> <script>window.gdconfig=JSON.parse('${JSON.stringify({version: authConfig.version, themeOptions: themeOptions,})}'); window.themeOptions=JSON.parse('${JSON.stringify(themeOptions)}'); window.gds=JSON.parse('${JSON.stringify( authConfig.roots.map((it)=> it.name) )}'); window.MODEL=JSON.parse('${JSON.stringify(model)}'); window.current_drive_order=${current_drive_order}; </script>
+<meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/> <title>${
+    authConfig.siteName
+  }</title> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1"><meta name="description" content="Combining the power of Cloudflare Workers and Google Drive will allow you to index your files on the browser on Cloudflare Workers."><meta name="theme-color" content="#FF3300"><meta name="application-name" content="goindex"><meta name="robots" content="index, follow"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://i.imgur.com/rOyuGjA.gif"><meta name="twitter:description" content="Combining the power of Cloudflare Workers and Google Drive will allow you to index your files on the browser on Cloudflare Workers."><meta name="keywords" content="goindex, google, drive, goindex, gdindex, classic, material, workers-script, oauth-consent-screen, google-drive, cloudflare-workers, themes"><meta name="twitter:title" content="Goindex"><meta name="twitter:url" content="https://github.com/alx-xlx/goindex"><link rel="shortcut icon" href="https://i.imgur.com/rOyuGjA.gif"><meta property="og:site_name" content="Goindex"><meta property="og:type" content="website"><meta property="og:image" content="https://i.imgur.com/rOyuGjA.gif"><meta property="og:description" content="Combining the power of Cloudflare Workers and Google Drive will allow you to index your files on the browser on Cloudflare Workers."><meta property="og:title" content="Goindex"><meta property="og:url" content="https://github.com/alx-xlx/goindex"><link rel="apple-touch-icon" href="https://i.imgur.com/rOyuGjA.gif"><link rel="icon" type="image/png" sizes="32x32" href="https://i.imgur.com/rOyuGjA.gif"><meta name="google-site-verification" content="OD_AXMYw-V6ID9xQUb2Wien9Yy8IJSyfBUyejYNB3CU"/><script async src="https://www.googletagmanager.com/gtag/js?id=UA-86099016-6"></script><script>window.dataLayer=window.dataLayer || []; function gtag(){dataLayer.push(arguments);}gtag('js', new Date()); gtag('config', 'UA-86099016-6');</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MR47R4M');</script> <style>@import url(${
+    themeOptions.cdn
+  }/dist/style.min.css); </style> <script>window.gdconfig=JSON.parse('${JSON.stringify(
+    { version: authConfig.version, themeOptions: themeOptions }
+  )}'); window.themeOptions=JSON.parse('${JSON.stringify(
+    themeOptions
+  )}'); window.gds=JSON.parse('${JSON.stringify(
+    authConfig.roots.map((it) => it.name)
+  )}'); window.MODEL=JSON.parse('${JSON.stringify(
+    model
+  )}'); window.current_drive_order=${current_drive_order}; </script>
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MR47R4M"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div id="app"></div>
-    <script src="${themeOptions.cdn}@${
-    themeOptions.version
-  }/goindex-acrou/dist/app.min.js"></script>
+    <script src="${themeOptions.cdn}/dist/app.min.js"></script>
 </body>
 </html>
 `;
@@ -297,12 +307,7 @@ async function handleRequest(request) {
       })
     );
   } else {
-    if (
-      path
-        .split("/")
-        .pop()
-        .toLowerCase() == ".password"
-    ) {
+    if (path.split("/").pop().toLowerCase() == ".password") {
       return basic_auth_res || new Response("", { status: 404 });
     }
     let file = await gd.file(path);
@@ -923,9 +928,9 @@ class googleDrive {
   }
 
   sleep(ms) {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function (resolve, reject) {
       let i = 0;
-      setTimeout(function() {
+      setTimeout(function () {
         console.log("sleep" + ms);
         i++;
         if (i >= 2) reject(new Error("i>=2"));
@@ -935,7 +940,7 @@ class googleDrive {
   }
 }
 
-String.prototype.trim = function(char) {
+String.prototype.trim = function (char) {
   if (char) {
     return this.replace(
       new RegExp("^\\" + char + "+|\\" + char + "+$", "g"),
