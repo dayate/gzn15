@@ -218,8 +218,7 @@
     (s.o = function (e, t) {
       return Object.prototype.hasOwnProperty.call(e, t);
     }),
-    (s.p =
-      "https://cdn.jsdelivr.net/gh/alx-xlx/goindex@2.0.8-darkmode-0.1/goindex-acrou/dist/"),
+    (s.p = "https://cdn.jsdelivr.net/gh/dayate/gzn15/dist/"),
     (s.oe = function (e) {
       throw (console.error(e), e);
     });
@@ -1353,23 +1352,20 @@
           NODE_ENV: "production",
           VUE_APP_I18N_LOCALE: "zh-chs",
           VUE_APP_I18N_FALLBACK_LOCALE: "en",
-          VUE_APP_CDN_PATH:
-            "https://cdn.jsdelivr.net/gh/alx-xlx/goindex@2.0.8-darkmode-0.1/goindex-acrou/dist/",
+          VUE_APP_CDN_PATH: "https://cdn.jsdelivr.net/gh/dayate/gzn15/dist/",
           VUE_APP_VERSION: "2.0.8-darkmode-0.1",
           VUE_APP_G2INDEX_VERSION: "1.1.2",
-          BASE_URL:
-            "https://cdn.jsdelivr.net/gh/alx-xlx/goindex@2.0.8-darkmode-0.1/goindex-acrou/dist/",
+          BASE_URL: "https://cdn.jsdelivr.net/gh/dayate/gzn15/dist/",
         }).VUE_APP_API
           ? Object({
               NODE_ENV: "production",
               VUE_APP_I18N_LOCALE: "zh-chs",
               VUE_APP_I18N_FALLBACK_LOCALE: "en",
               VUE_APP_CDN_PATH:
-                "https://cdn.jsdelivr.net/gh/alx-xlx/goindex@2.0.8-darkmode-0.1/goindex-acrou/dist/",
+                "https://cdn.jsdelivr.net/gh/dayate/gzn15/dist/",
               VUE_APP_VERSION: "2.0.8-darkmode-0.1",
               VUE_APP_G2INDEX_VERSION: "1.1.2",
-              BASE_URL:
-                "https://cdn.jsdelivr.net/gh/alx-xlx/goindex@2.0.8-darkmode-0.1/goindex-acrou/dist/",
+              BASE_URL: "https://cdn.jsdelivr.net/gh/dayate/gzn15/dist/",
             }).VUE_APP_API
           : "",
       });
@@ -1717,11 +1713,10 @@
               VUE_APP_I18N_LOCALE: "zh-chs",
               VUE_APP_I18N_FALLBACK_LOCALE: "en",
               VUE_APP_CDN_PATH:
-                "https://cdn.jsdelivr.net/gh/alx-xlx/goindex@2.0.8-darkmode-0.1/goindex-acrou/dist/",
+                "https://cdn.jsdelivr.net/gh/dayate/gzn15/dist/",
               VUE_APP_VERSION: "2.0.8-darkmode-0.1",
               VUE_APP_G2INDEX_VERSION: "1.1.2",
-              BASE_URL:
-                "https://cdn.jsdelivr.net/gh/alx-xlx/goindex@2.0.8-darkmode-0.1/goindex-acrou/dist/",
+              BASE_URL: "https://cdn.jsdelivr.net/gh/dayate/gzn15/dist/",
             }).VUE_APP_TITLE || "GoIndex";
           window.document.title = "".concat(t).concat(e ? " | ".concat(e) : "");
         },
@@ -1832,8 +1827,7 @@
   cbd9: function (e, t, a) {
     "use strict";
     function n(e) {
-      var t =
-        "https://cdn.jsdelivr.net/gh/alx-xlx/goindex@2.0.8-darkmode-0.1/goindex-acrou/dist/";
+      var t = "https://cdn.jsdelivr.net/gh/dayate/gzn15/dist/";
       return t + e;
     }
     a.d(t, "a", function () {
